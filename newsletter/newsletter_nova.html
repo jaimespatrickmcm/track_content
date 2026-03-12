@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>track news — Edição 02 | Março 2026</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #f4f4f5;
+      font-family: 'Inter', Arial, sans-serif;
+      color: #1a1a1a;
+    }
+
+    .wrapper {
+      max-width: 620px;
+      margin: 32px auto;
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+
+    /* ── HEADER ── */
+    .header {
+      background: linear-gradient(135deg, #FF5C8D 0%, #9B59CC 100%);
+      padding: 40px 40px 32px;
+      text-align: center;
+    }
+
+    .header .icon-img {
+      display: block;
+      margin: 0 auto 12px;
+      width: 60px;
+      height: auto;
+    }
+
+    .header .subtitle {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      color: rgba(255,255,255,0.85);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .header .edition-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.18);
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+    }
+
+    .header .tagline {
+      font-size: 14px;
+      color: rgba(255,255,255,0.80);
+      line-height: 1.6;
+    }
+
+    /* ── INTRO ── */
+    .intro {
+      padding: 28px 40px 12px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .intro p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #555555;
+    }
+
+    .intro strong {
+      color: #1a1a1a;
+    }
+
+    /* ── SECTION LABEL ── */
+    .section-label {
+      padding: 24px 40px 0;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #9b9bb5;
+    }
+
+    /* ── TREND CARD ── */
+    .trend-card {
+      padding: 24px 40px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .trend-card:last-of-type {
+      border-bottom: none;
+    }
+
+    .trend-number {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      background: linear-gradient(90deg, #FF5C8D, #9B59CC);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .trend-card h2 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #1a1a1a;
+      line-height: 1.3;
+      margin-bottom: 10px;
+      padding-left: 14px;
+      border-left: 4px solid;
+      border-image: linear-gradient(180deg, #FF5C8D, #9B59CC) 1;
+    }
+
+    .trend-card p {
+      font-size: 14px;
+      line-height: 1.75;
+      color: #555555;
+      margin-bottom: 14px;
+    }
+
+    .trend-card p strong {
+      color: #1a1a1a;
+    }
+
+    .read-more {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      background: linear-gradient(90deg, #FF5C8D, #9B59CC);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-decoration: none;
+      border-bottom: 1.5px solid #FF5C8D;
+      padding-bottom: 1px;
+      letter-spacing: 0.3px;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      margin: 0 40px;
+      border: none;
+      border-top: 1px dashed #f0f0f0;
+    }
+
+    /* ── OPINION BLOCK ── */
+    .opinion-block {
+      margin: 0 40px 28px;
+      background: #fdf4f9;
+      border-left: 4px solid;
+      border-image: linear-gradient(180deg, #FF5C8D, #9B59CC) 1;
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+    }
+
+    .opinion-block .opinion-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #FF5C8D, #9B59CC);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 6px;
+    }
+
+    .opinion-block p {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #555555;
+      font-style: italic;
+    }
+
+    /* ── CTA BLOCK ── */
+    .cta-block {
+      background: #ffffff;
+      border-top: 1px solid #f0f0f0;
+      padding: 40px 40px;
+      text-align: center;
+    }
+
+    .cta-block .cta-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #FF5C8D, #9B59CC);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+    }
+
+    .cta-block h3 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #1a1a1a;
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+
+    .cta-block p {
+      font-size: 14px;
+      color: #555555;
+      line-height: 1.6;
+      margin-bottom: 28px;
+      max-width: 440px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(135deg, #FF5C8D 0%, #9B59CC 100%);
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 8px;
+      letter-spacing: 0.3px;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: #1a1a1a;
+      padding: 32px 40px;
+      text-align: center;
+    }
+
+    .footer .footer-logo {
+      display: block;
+      margin: 0 auto 12px;
+      max-width: 120px;
+      width: 100%;
+    }
+
+    .footer p {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+
+    .footer a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: #ffffff;
+    }
+
+    .footer .unsubscribe {
+      font-size: 11px;
+      color: rgba(255,255,255,0.3);
+    }
+
+    .footer .unsubscribe a {
+      color: rgba(255,255,255,0.4);
+      text-decoration: underline;
+    }
+
+    @media (max-width: 640px) {
+      .header, .intro, .trend-card, .cta-block, .footer { padding-left: 24px; padding-right: 24px; }
+      .section-label { padding-left: 24px; }
+      .opinion-block, .divider { margin-left: 24px; margin-right: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <div class="header">
+    <img class="icon-img" src="https://pvhtnxpjrnnaylowaxli.supabase.co/storage/v1/object/public/Track%20Band/LogoColoridaHR.png" alt="track" />
+    <div class="subtitle">track news &bull; A newsletter do turismo digital</div>
+    <span class="edition-tag">Edição 02 · Março 2026</span>
+    <p class="tagline">Marketing digital, redes sociais e criação de conteúdo:<br>o que está mudando agora e o que você precisa saber.</p>
+  </div>
+
+  <!-- INTRO -->
+  <div class="intro">
+    <p>
+      Segunda semana de março de 2026 e o cenário do marketing digital segue em movimento acelerado. <strong>GEO, autenticidade, fastvertising, zero-click e social search</strong> estão redefinindo como marcas aparecem, se comunicam e vendem. Esta edição traz as cinco tendências mais relevantes da semana — com análise direta e links para você se aprofundar.
+    </p>
+  </div>
+
+  <!-- SECTION LABEL -->
+  <div class="section-label">Tendências da Semana</div>
+
+  <!-- TREND 1 -->
+  <div class="trend-card">
+    <div class="trend-number">Tendência 01</div>
+    <h2>GEO: Otimizar para IA Generativa é a Nova Batalha do SEO</h2>
+    <p>
+      A busca deixou de ser sobre ranquear no Google e passou a ser sobre <strong>aparecer nas respostas de IAs generativas</strong>. O conceito de GEO (Generative Engine Optimization) exige conteúdo confiável, centrado em pessoas e estruturado para consultas conversacionais — não apenas palavras-chave. Marcas que não adaptarem sua estratégia de conteúdo para esse novo paradigma ficarão invisíveis para uma parcela crescente dos usuários.
+    </p>
+    <a class="read-more" href="https://business.google.com/en-all/think/consumer-insights/digital-marketing-trends-2026/" target="_blank">Saiba mais sobre GEO →</a>
+  </div>
+
+  <!-- TREND 2 -->
+  <div class="trend-card">
+    <div class="trend-number">Tendência 02</div>
+    <h2>Retorno ao Real: Imperfeição Virou Estratégia de Marca</h2>
+    <p>
+      Pesquisas da Ogilvy apontam que audiências em 2026 <strong>rejeitam a perfeição sintética da IA</strong> e valorizam conteúdos "feios", improvisados e humanos como sinal de autenticidade. Marcas que insistem em imagens hiper-produzidas por IA estão perdendo conexão emocional com seus públicos. A era do "social with substance" chegou: profundidade e verdade valem mais do que polimento visual.
+    </p>
+    <a class="read-more" href="https://www.ogilvy.com/ideas/social-trends-2026-social-substance-return-real" target="_blank">Ver relatório da Ogilvy →</a>
+  </div>
+
+  <!-- TREND 3 -->
+  <div class="trend-card">
+    <div class="trend-number">Tendência 03</div>
+    <h2>Fastvertising: Marcas que Respondem em Horas Ganham o Algoritmo</h2>
+    <p>
+      Uma nova estratégia chamada <strong>"fastvertising"</strong> está dominando as redes: publicar conteúdo reativo dentro de horas após uma tendência emergir. Os algoritmos de 2026 priorizam marcas que se movem rapidamente e respondem a momentos culturais em tempo real. Não é sobre planejamento de um mês — é sobre ter um processo ágil de criação e aprovação de conteúdo.
+    </p>
+    <a class="read-more" href="https://seafoammedia.com/march-2026-marketing-news-trends-insights/" target="_blank">Ver análise completa →</a>
+  </div>
+
+  <!-- TREND 4 -->
+  <div class="trend-card">
+    <div class="trend-number">Tendência 04</div>
+    <h2>Zero-Click: Visibilidade Sem o Clique Importa Tanto Quanto o Tráfego</h2>
+    <p>
+      Rand Fishkin prevê que <strong>a maioria das experiências online em 2026 não resultará em um clique</strong>. Com Google Discover, AI Overviews e redes sociais respondendo perguntas direto no feed, o conteúdo precisa gerar valor e reconhecimento mesmo quando o usuário não visita seu site. Métricas de impressão, share of voice e menção em IAs passam a ser tão importantes quanto sessões e pageviews.
+    </p>
+    <a class="read-more" href="https://www.wordstream.com/blog/2026-content-marketing-trends" target="_blank">Ver tendências de conteúdo →</a>
+  </div>
+
+  <!-- TREND 5 -->
+  <div class="trend-card">
+    <div class="trend-number">Tendência 05</div>
+    <h2>Social Search: TikTok, Instagram e YouTube Viraram Mecanismos de Busca</h2>
+    <p>
+      O Google está perdendo relevância como ponto de partida para descobertas. <strong>Usuários — especialmente Gen Z e Millennials — pesquisam dentro das plataformas sociais</strong>, usando TikTok, Instagram, YouTube e Pinterest como seu mecanismo de busca principal. Isso exige otimizar legendas, hashtags, títulos e descrições para a busca nativa de cada plataforma, não apenas para algoritmos de feed.
+    </p>
+    <a class="read-more" href="https://slateteams.com/blog/social-media-trends-2026" target="_blank">Explorar social search →</a>
+  </div>
+
+  <!-- OPINION BLOCK -->
+  <div class="opinion-block">
+    <div class="opinion-label">Ponto de Vista Track</div>
+    <p>
+      "No turismo digital, essas cinco tendências têm impacto direto: hotéis e agências que adaptarem seu conteúdo para busca generativa e social search saem na frente. Autenticidade e velocidade de resposta já não são diferenciais — são o mínimo esperado pelo viajante conectado de 2026."
+    </p>
+  </div>
+
+  <!-- CTA BLOCK -->
+  <div class="cta-block">
+    <div class="cta-label">Consultoria Track</div>
+    <h3>Sua empresa já está preparada para o turismo digital de 2026?</h3>
+    <p>
+      A Track ajuda agências, hotéis e operadoras a implementar automação, IA e marketing digital com estratégia real — não teoria. Agende uma conversa gratuita com nosso time e descubra onde estão seus maiores ganhos.
+    </p>
+    <a class="cta-button" href="https://trackbr.com" target="_blank">Agendar Consultoria Gratuita →</a>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <img class="footer-logo" src="https://pvhtnxpjrnnaylowaxli.supabase.co/storage/v1/object/public/Track%20Band/LogoColoridaHR.png" alt="Track" />
+    <p>
+      Você está recebendo a <strong style="color:rgba(255,255,255,0.7);">track news</strong> por fazer parte da comunidade Track.<br />
+      <a href="https://trackbr.com">trackbr.com</a> · Turismo Digital &amp; Automação para o Brasil
+    </p>
+    <p class="unsubscribe">
+      Para cancelar o recebimento, <a href="#">clique aqui</a>.
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>

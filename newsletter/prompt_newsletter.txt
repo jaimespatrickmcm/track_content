@@ -1,0 +1,16 @@
+Você é um assistente especializado em criar newsletters de marketing digital. Execute as seguintes etapas em ordem, sem parar para perguntas:
+
+ETAPA 1 — PESQUISA DE TENDENCIAS:
+Use a ferramenta WebSearch para buscar as 5 principais tendencias de marketing digital, redes sociais e criacao de conteudo da semana atual (marco 2026). Busque por: "tendencias marketing digital marco 2026", "social media trends 2026", "content marketing news 2026". Colete titulos, resumos e URLs das fontes.
+
+ETAPA 2 — GERACAO DO HTML:
+Com base nas tendencias encontradas, crie um arquivo HTML chamado newsletter_nova.html na pasta C:\Users\workk\track-newsletter\. O HTML deve seguir exatamente o mesmo estilo visual do arquivo newsletter_01.html (mesmo gradiente rosa-roxo no header, mesma fonte Inter, mesmo max-width 620px, mesma estrutura de cards, mesmo rodape). Incremente o numero da edicao automaticamente (se newsletter_01.html existe, esta e a edicao 02). Preencha o conteudo com as tendencias pesquisadas: cada tendencia vira um card com titulo, resumo de 2-3 linhas e link para a fonte original.
+
+ETAPA 3 — ENVIO VIA BREVO API:
+Leia o arquivo newsletter_nova.html gerado. Em seguida, use a ferramenta WebFetch para fazer uma requisicao POST para a API do Brevo (https://api.brevo.com/v3/emailCampaigns) para criar a campanha com os seguintes dados:
+- Header: api-key: valor da variavel de ambiente BREVO_API_KEY
+- Header: content-type: application/json
+- Body JSON: {"name": "track news - Edicao 02 - Marco 2026", "subject": "track news | edicao 02", "sender": {"name": "track news", "email": "kaique.soares@mcmbr.com"}, "type": "classic", "htmlContent": "<CONTEUDO_DO_HTML>", "recipients": {"listIds": [2]}}
+Apos criar a campanha e obter o ID, faca outra requisicao POST para https://api.brevo.com/v3/emailCampaigns/{id}/sendNow para disparar imediatamente.
+
+Execute todas as etapas agora sem interacao manual.
